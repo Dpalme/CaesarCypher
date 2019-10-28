@@ -13,11 +13,26 @@ for linea in quijote.readlines():
             Letras[caracter] = 1
 
 archivoVolcado = open("output.txt", "w", encoding="UTF-8")
-LetrasChar = []
-for key in Letras:
-    Letras[key] = Letras[key]/contador
-    archivoVolcado.write(str('"' + key + '": ' + "%.4f" % Letras[key] + ", "))
-    LetrasChar.append((key, Letras[key]))
+archivoVolcado.write("{")
 
-plot.plot(LetrasChar)
-plot.show()
+# Totales
+archivoVolcado.write('"totales":{')
+for i in range(ord("a"), ord("z") + 1):
+    try:
+        archivoVolcado.write(str('"' + chr(i) + '": ' + str(Letras[chr(i)]) + ", "))
+    except KeyError:
+        archivoVolcado.write(str('"' + chr(i) + '": ' + "0.0000" + ", "))
+    archivoVolcado.write('\n')
+archivoVolcado.write("}")
+
+# Porcentuales
+archivoVolcado.write('"porcentuales":{')
+for i in range(ord("a"), ord("z") + 1):
+    try:
+        archivoVolcado.write(str('"' + chr(i) + '": ' + "%.4f" % (Letras[chr(i)]/contador) + ", "))
+    except KeyError:
+        archivoVolcado.write(str('"' + chr(i) + '": ' + "0.0000" + ", "))
+    archivoVolcado.write('\n')
+archivoVolcado.write("}")
+
+archivoVolcado.write("}")
