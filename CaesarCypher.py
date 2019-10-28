@@ -1,7 +1,15 @@
+import json
+
 def encode(key, stringToEncode):
     finalString = ""
     for char in stringToEncode.lower():
-        finalString += 96 + key - (122 - ord(char)) if ord(char) + key> 122 else char
+        if char.isalpha():
+            if ord(char) + key > 122:
+                finalString += chr(96 + key - (122 - ord(char)))
+            else:
+                finalString += chr(ord(char) + key)
+        else:
+            finalString += char
     return finalString
 
 
@@ -12,18 +20,45 @@ def decode(key, mensaje):
     return mensajeDescifrado
 
 
+def sortDictToArray(dictionary):
+    sortedArray = {}
+    for i in range(ord("a"), ord("z") + 1):
+        try:
+            sortedArray[chr(i)] = dictionary[chr(i)]
+        except KeyError:
+            sortedArray[chr(i)] = 0.0000
+    return sortedArray
+
+
+def maxKey(dictionary):
+    maximum = 0
+    maxKeyValue = ""
+    for key in dictionary:
+        if dictionary[key] > maximum and key != " ":
+            maximum = dictionary[key]
+            maxKeyValue = key
+    return maxKeyValue
+
+
 def keyFinder(mensaje):
-    distBase = open("output.json", "r", encoding="UTF-8")
+    with open('output.json', encoding="UTF-8") as json_file:
+        database = json.load(json_file)
     Letras = {}
     contador = 0
-
     for char in mensaje.lower():
         contador+=1
         try:
             Letras[char] = Letras[char] + 1
         except KeyError:
             Letras[char] = 1
-    LetrasChar = []
+    
     for key in Letras:
-        Letras[key] = Letras[key]/contador
-        LetrasChar.append((key, Letras[key]))
+        Letras[key] = Letras[key] / contador
+    return ord(maxKey(Letras)) - ord("e")
+
+
+codedMessage = encode(4 ,"bebe no quiero ver netflix quiero ver tu carita toda la vida")
+print(codedMessage)
+key = keyFinder(codedMessage)
+print(key)
+print(decode(key, codedMessage))
