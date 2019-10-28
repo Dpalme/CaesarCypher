@@ -12,7 +12,7 @@ for linea in quijote.readlines():
         except KeyError:
             Letras[caracter] = 1
 
-archivoVolcado = open("output.txt", "w", encoding="UTF-8")
+archivoVolcado = open("output.json", "w", encoding="UTF-8")
 archivoVolcado.write("{")
 
 # Totales
@@ -23,7 +23,7 @@ for i in range(ord("a"), ord("z") + 1):
     except KeyError:
         archivoVolcado.write(str('"' + chr(i) + '": ' + "0.0000" + ", "))
     archivoVolcado.write('\n')
-archivoVolcado.write("}")
+archivoVolcado.write("},")
 
 # Porcentuales
 archivoVolcado.write('"porcentuales":{')
