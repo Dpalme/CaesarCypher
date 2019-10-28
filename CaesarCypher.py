@@ -10,19 +10,19 @@ def encode(key, stringToEncode):
     return finalString
 
 
-def decode(key, stringToDecode):
-    finalString = ""
-    for char in stringToDecode.lower():
-        if char.isalpha():
-            if chr(ord(char) - key).isalpha():
-                if chr(ord(char) - key).islower():
-                    finalString += chr(ord(char) - key)
+def decode(key, mensaje):
+    mensajeDescifrado = ""
+    for palabra in mensaje.lower():
+        for letra in palabra:
+            if letra.isalpha():
+                x = ord(letra)
+                if x - key < 97:
+                    x = 122 - key + (x - 96)
                 else:
-                    finalString += chr((ord(char) - key) + (ord("z")-ord("a")))
+                    x -= key
+                mensajeDescifrado += chr(x)
             else:
-                finalString += chr((ord(char) - key) - (ord("z")-ord("a")+1))
-        else:
-            finalString+=char
-    return finalString
+                mensajeDescifrado += letra
+    return mensajeDescifrado
 
 print(decode(24, encode(24, "Que pedo soy el mero mero miguel hidalgo hdtptm. viaje en el tiempo para partirte tu reputisima madre")))
