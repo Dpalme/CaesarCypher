@@ -1,7 +1,7 @@
 def encode(key, stringToEncode):
     finalString = ""
     for char in stringToEncode.lower():
-            finalString += chr(ord(char) + key - (ord("z")-ord("a")+1) if ord(char)+key > ord("z") else ord(char) + key) if char.isalpha() else char
+        finalString += 96 + key - (122 - ord(char)) if ord(char) + key> 122 else char
     return finalString
 
 
