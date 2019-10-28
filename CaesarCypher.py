@@ -20,16 +20,6 @@ def decode(key, mensaje):
     return mensajeDescifrado
 
 
-def sortDictToArray(dictionary):
-    sortedArray = {}
-    for i in range(ord("a"), ord("z") + 1):
-        try:
-            sortedArray[chr(i)] = dictionary[chr(i)]
-        except KeyError:
-            sortedArray[chr(i)] = 0.0000
-    return sortedArray
-
-
 def maxKey(dictionary):
     maximum = 0
     maxKeyValue = ""
