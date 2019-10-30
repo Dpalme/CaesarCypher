@@ -23,7 +23,6 @@ for linea in quijote.readlines():
                 totales[caracter] = totales[caracter] + 1
             except KeyError:
                 totales[caracter] = 1
-
 data["totales"] = totales
 
 # Porcentuales
@@ -31,6 +30,15 @@ porcentajes = {"k": 0.0}
 for i in totales:
     porcentajes[i] = totales[i]/contador
 data["porcentajes"] = porcentajes
+
+tags = []
+values = []
+
+for key in totales:
+    tags.append(key)
+    values.append(totales[key])
+
+plot.plot(values,tags)
 
 archivoVolcado = open("output.json", "w", encoding="UTF-8")
 archivoVolcado.write(json.dumps(data, indent=4, sort_keys=True, ensure_ascii=False))
