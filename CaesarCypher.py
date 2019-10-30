@@ -12,6 +12,13 @@ def character(number):
     return chr(97 + number%26)
 
 
+def normalizeString(string):
+    string = string.lower()
+    string = string.replace("í", "i").replace("é", "e").replace("á", "a").replace("ó", "o").replace("ú", "u")
+    string = string.replace("ñ", "n").replace("à", "a").replace("ù", "u").replace("ï", "i").replace("ù", "u")
+    return string.replace("ü", "u")
+
+
 def encode(key, stringToEncode):
     finalString = ""
     for char in stringToEncode.lower():
@@ -20,18 +27,7 @@ def encode(key, stringToEncode):
         else:
             finalString += char
     return finalString
-
-
-def normalizeString(string):
-    string = string.lower()
-    string = string.replace("í", "i")
-    string = string.replace("é", "e")
-    string = string.replace("á", "a")
-    string = string.replace("ó", "o")
-    string = string.replace("ú", "u")
-    string = string.replace("ñ", "n")
-    return string
-
+    
 
 def decode(key, mensaje):
     mensajeDescifrado = ""
@@ -42,17 +38,13 @@ def decode(key, mensaje):
 
 def keyWithChi(obtainedFrequencies, numLetras):
     with open('output.json', encoding="UTF-8") as json_file:
-        database = json.load(json_file)
-    expectedFrec = database["porcentajes"]
+        expectedFrec = json.load(json_file)["porcentajes"]
     potentialKeys = []
     for i in range(0, 26):
         chisqrd = 0
         for j in range(0, 26):
             e = expectedFrec[character(j)]*numLetras
-            if(i+j+97 <123):
-                o = obtainedFrequencies[character(i+j)]
-            else:
-                o = obtainedFrequencies[character(i-25+j)]
+            o = obtainedFrequencies[character(i+j)]
             try:
                 chisqrd += ((e-o)**2)/e
             except ZeroDivisionError:
@@ -62,26 +54,23 @@ def keyWithChi(obtainedFrequencies, numLetras):
 
 
 def keyFinder(mensaje):
-    Letras = {}
-    for x in range(0, 26):
-        Letras[character(x)] = 0
+    Letras = {character(x): 0 for x in range(26)}
     contador = 0
     for char in mensaje.lower():
         if char.isalpha():
             contador += 1
-            try:
-                Letras[char] = Letras[char] + 1
-            except KeyError:
-                Letras[char] = 1
+            Letras[char] = Letras[char] + 1
     return keyWithChi(Letras, contador)
 
 
-codedMessage = "b ho fxhuyr qxqfd hpsuhqglr ho yxhor, dxq vljxh srvdgr vreuh ho exvwr gh sdodv, vreuh ho glqwho gh pl sxhuwd"
-key = keyFinder(codedMessage)
-print("mensaje codificado: " + str(codedMessage))
-print("key:" + str(key))
-print("mensaje decodificado: " + str(decode(key, codedMessage)))
+def main():
+    codedMessage = "b ho fxhuyr qxqfd hpsuhqglr ho yxhor, dxq vljxh srvdgr vreuh ho exvwr gh sdodv, vreuh ho glqwho gh pl sxhuwd"
+    key = keyFinder(codedMessage)
+    print("mensaje codificado: " + str(codedMessage))
+    print("key:" + str(key))
+    print("mensaje decodificado: " + str(decode(key, codedMessage)))
 
+main()
 
 # b ho fxhuyr qxqfd hpsuhqglr ho yxhor, dxq vljxh srvdgr vreuh ho exvwr gh sdodv, vreuh ho glqwho gh pl sxhuwd
 # key:3

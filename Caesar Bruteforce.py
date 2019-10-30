@@ -1,12 +1,6 @@
+from CaesarCypher import num, character
+
 message = "cjgv"
-
-def num(char):
-    return ord(char)-97
-
-
-def character(number):
-    return chr(97 + number%26)
-
 
 for i in range (0, 26):
     msg = ""

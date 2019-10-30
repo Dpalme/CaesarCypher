@@ -1,12 +1,6 @@
 import matplotlib.pyplot as plot
 import json
-
-
-def normalizeString(string):
-    string = string.lower()
-    string = string.replace("í", "i").replace("é", "e").replace("á", "a").replace("ó", "o").replace("ú", "u")
-    string = string.replace("ñ", "n").replace("à", "a").replace("ù", "u").replace("ï", "i").replace("ù", "u")
-    return string.replace("ü", "u")
+from CaesarCypher import normalizeString
 
 
 quijote = open("Quijote.txt", "r", encoding="UTF-8")
@@ -30,15 +24,6 @@ porcentajes = {"k": 0.0}
 for i in totales:
     porcentajes[i] = totales[i]/contador
 data["porcentajes"] = porcentajes
-
-tags = []
-values = []
-
-for key in totales:
-    tags.append(key)
-    values.append(totales[key])
-
-plot.plot(values,tags)
 
 archivoVolcado = open("output.json", "w", encoding="UTF-8")
 archivoVolcado.write(json.dumps(data, indent=4, sort_keys=True, ensure_ascii=False))
