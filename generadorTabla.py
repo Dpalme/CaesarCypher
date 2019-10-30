@@ -2,7 +2,7 @@ import matplotlib.pyplot as plot
 import json
 
 quijote = open("Quijote.txt", "r", encoding="UTF-8")
-totales = {}
+totales = {"k": 0}
 
 data = {}
 contador = 0
@@ -18,7 +18,7 @@ for linea in quijote.readlines():
 data["totales"] = totales
 
 # Porcentuales
-porcentajes = {}
+porcentajes = {"k": 0.0}
 for i in totales:
     porcentajes[i] = totales[i]/contador
 data["porcentajes"] = porcentajes
