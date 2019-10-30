@@ -70,7 +70,6 @@ def main():
     print("key:" + str(key))
     print("mensaje decodificado: " + str(decode(key, codedMessage)))
 
-main()
 
 # b ho fxhuyr qxqfd hpsuhqglr ho yxhor, dxq vljxh srvdgr vreuh ho exvwr gh sdodv, vreuh ho glqwho gh pl sxhuwd
 # key:3
