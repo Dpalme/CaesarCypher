@@ -1,19 +1,28 @@
 import matplotlib.pyplot as plot
 import json
 
-quijote = open("Quijote.txt", "r", encoding="UTF-8")
-totales = {"k": 0}
 
+def normalizeString(string):
+    string = string.lower()
+    string = string.replace("í", "i").replace("é", "e").replace("á", "a").replace("ó", "o").replace("ú", "u")
+    string = string.replace("ñ", "n").replace("à", "a").replace("ù", "u").replace("ï", "i").replace("ù", "u")
+    return string.replace("ü", "u")
+
+
+quijote = open("Quijote.txt", "r", encoding="UTF-8")
+
+totales = {"k": 0}
 data = {}
 contador = 0
 
 for linea in quijote.readlines():
-    for caracter in linea.lower():
-        contador+=1
-        try:
-            totales[caracter] = totales[caracter] + 1
-        except KeyError:
-            totales[caracter] = 1
+    for caracter in normalizeString(linea):
+        if caracter.isalpha():
+            contador+=1
+            try:
+                totales[caracter] = totales[caracter] + 1
+            except KeyError:
+                totales[caracter] = 1
 
 data["totales"] = totales
 
