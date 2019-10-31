@@ -56,31 +56,33 @@ function character(number){
 
 function encode(key, message){
     cypheredMessage = "";
-    for(char in message){
-        cypheredMessage +=  isLetter(message[char]) ? character(num(message[char]) + key) : message[char];        
+    for(char of message){
+        cypheredMessage +=  isLetter(char) ? character(num(char) + key) : char;
     }
-    return cypheredMessage;
+    document.getElementById('txtarea').value = cypheredMessage;
 }
 
 
 function decode(key, message){
     decypheredMessage = "";
-    for(char in message){
-        decypheredMessage +=  isLetter(message[char]) ? character(num(message[char]) - key) : message[char];        
+    for(char of message){
+        decypheredMessage +=  isLetter(char) ? character(num(char) - key) : char;
     }
-    return decypheredMessage;
+    document.getElementById('txtarea').value = decypheredMessage;
 }
 
 
 function bruteForce(message){
-    for(i = 0; i = 26; i++){
-        msg = ""
-        for(char in message){
-            msg += isLetter(message[char]) ? character(num(message[char]+1)) : char;
+    messages = "";
+    for(i = 1; i < 27; i++){
+        msg = "";
+        for(char of message){
+            msg += isLetter(char) ? character(num(char) + 1) : char;
         }
-        message += msg + "\n";
+        message = msg;
+        messages += msg + ", key = " + (26-i) + ' | ';
     }
-    return message;
+    document.getElementById('txtarea').value = messages;
 }
 
 
@@ -107,12 +109,12 @@ function keyWithChi(message){
         }
         potentialKeys.push(chisqrd);
     }    
-    return potentialKeys.indexOf(min(potentialKeys));
+    document.getElementById('seed').value = potentialKeys.indexOf(min(potentialKeys));
 }
 
 
 function keyFinder(message){
-    return message.length > 6 ? keyWithChi(message) : bruteForce(message);
+    return message.length > 10 ? keyWithChi(message) : bruteForce(message);
 }
 
 
