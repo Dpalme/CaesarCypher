@@ -1,0 +1,90 @@
+@font-face {
+	font-family: 'Helvetica-Light';
+	src: url('fonts/HelveticaLt.ttf') format('ttf')
+}
+
+@font-face {
+	font-family: 'Helvetica';
+	src: url('fonts/Helvetica-Regular.ttf') format('ttf')
+}
+
+
+/* Global Variables */
+
+:root {
+	--bg: #202020;
+	--font: #eaeaea;
+	--accent: #f03e10;
+	--accent2: #ffbe2d;
+    --accent3: #f07d30;
+    --vw: 1vw;
+}
+
+body {
+	background-color: var(--background);
+    width: 80%;
+    height: 96vh;
+	margin: auto;
+	background: var(--bg);
+	color: var(--font);
+	font-family: 'Helvetica', 'Arial', sans-serif;
+}
+
+textarea {
+	background: var(--bg);
+	color: var(--font-color);
+	font-family: 'Helvetica', 'Arial', sans-serif;
+	font-weight: 100;
+	font-size: calc(var(--vw) * 1.5);
+}
+
+button {
+	color: var(--font);
+	background: var(--bg);
+	border: var(--font);
+	font-family: 'Helvetica-Light', 'Helvetica', 'Arial', sans-serif;
+	border-style: solid;
+	padding: var(--vw);
+	border-width: calc(var(--vw) * .1);
+	text-align: center;
+	font-size: var(--vw);
+	width: auto;
+	text-transform: uppercase;
+}
+
+input[type='number'] {
+	color: var(--font);
+	background: var(--bg);
+	border: var(--font);
+	font-family: 'Helvetica-Light', 'Helvetica', 'Arial', sans-serif;
+	border-style: solid;
+	padding: var(--vw);
+	border-width: calc(var(--vw) * .1);
+	text-align: center;
+	font-size: var(--vw);
+	width: auto;
+	text-transform: uppercase;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+	width: 10px;
+}
+
+::-webkit-scrollbar-track {
+	background: #070707;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #151515;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #151515;
+}
+
+@media screen and (max-width: 1200px) {
+    :root{
+        --vw: 4vw;
+    }
+}
