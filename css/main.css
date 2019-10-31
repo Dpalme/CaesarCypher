@@ -1,12 +1,10 @@
-@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap');
-
 @font-face{
 	font-family: 'Wals-Bold';
 	src:url('fonts/GT-Walsheim-Bold.woff2') format('woff2');
 }
 
 @font-face {
-    font-family: 'basier_square_monoregular';
+    font-family: 'basier_mono';
     src: url('basiersquaremono-regular-webfont.woff2') format('woff2'),
          url('basiersquaremono-regular-webfont.woff') format('woff'),
          url('basiersquaremono-regular-webfont.ttf') format('truetype');
@@ -37,15 +35,19 @@ h1{
 	font-size: calc(var(--vw)*3.5);
 }
 
-h3{
+h2{
 	font-size: calc(var(--vw)*1.5);
-	margin-right: var(--vw);
+}
+
+h3{
+	font-size: var(--vw);
+	font-family: 'basier_mono', sans-serif;
 }
 
 a {
 	text-decoration: none;
 	color: var(--accent);
-	font-family: 'basier_square_monoregular', sans-serif;
+	font-family: 'basier_mono', sans-serif;
 }
 
 textarea {
@@ -55,7 +57,7 @@ textarea {
 	border: transparent;
 	padding: 1rem;
 	font-size: calc(var(--vw) * 1.5);
-	font-family: 'basier_square_monoregular', sans-serif;
+	font-family: 'basier_mono', sans-serif;
 	border-radius: .2em;
 }
 
