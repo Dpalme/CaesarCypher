@@ -109,6 +109,18 @@ button:hover{
 	background: #151515;
 }
 
+/* Selection */
+
+::-moz-selection {
+	background: var(--bg);
+	color: var(--font);
+}
+
+::selection {
+	background: var(--bg);
+	color: var(--font);
+}
+
 @media screen and (max-width: 1200px) {
     :root{
         --vw: 4vw;
