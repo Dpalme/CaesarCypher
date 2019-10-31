@@ -116,12 +116,3 @@ function keyWithChi(message){
 function keyFinder(message){
     return message.length > 10 ? keyWithChi(message) : bruteForce(message);
 }
-
-
-function main(){
-    var codedMessage = encode(2, "el zopenco toma lo que el tarado le da a tomar");
-    var key = keyFinder(codedMessage);
-    console.log("message codificado: " + codedMessage);
-    console.log("key:" + key);
-    console.log("message decodificado: " + decode(key, codedMessage));
-}

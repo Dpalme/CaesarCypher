@@ -1,69 +1,67 @@
-@font-face {
-	font-family: 'Helvetica-Light';
-	src: url('fonts/HelveticaLt.ttf') format('ttf')
+@import url('https://fonts.googleapis.com/css?family=Raleway|Roboto&display=swap');
+
+@font-face{
+	font-family: 'Wals-Bold';
+	src:url('fonts/GT-Walsheim-Bold.woff2') format('woff2');
 }
 
-@font-face {
-	font-family: 'Helvetica';
-	src: url('fonts/Helvetica-Regular.ttf') format('ttf')
+@font-face{
+	font-family: 'Wals-Regular';
+	src:url('fonts/GT-Walsheim-Regular.woff2') format('woff2');
 }
-
 
 /* Global Variables */
 
 :root {
-	--bg: #202020;
-	--font: #eaeaea;
-	--accent: #f03e10;
-	--accent2: #ffbe2d;
-    --accent3: #f07d30;
+	--bg: #F7F9F8;
+	--font: #202025;
+	--accent: #679FDA;
+	--accent2: #20DD88;
     --vw: 1vw;
 }
 
 body {
 	background-color: var(--background);
     width: 80%;
-    height: 96vh;
 	margin: auto;
 	background: var(--bg);
 	color: var(--font);
-	font-family: 'Helvetica', 'Arial', sans-serif;
+	font-family: 'Wals-Regular', 'Arial', sans-serif;
+}
+
+h1{
+	font-size: calc(var(--vw)*3.5);
+}
+
+h3{
+	font-size: calc(var(--vw)*1.5);
+	margin-right: var(--vw);
 }
 
 textarea {
-	background: var(--bg);
+	background: #eee;
 	color: var(--font-color);
-	font-family: 'Helvetica', 'Arial', sans-serif;
 	font-weight: 100;
 	font-size: calc(var(--vw) * 1.5);
+	font-family: 'Wals-Regular', 'Arial', sans-serif;
+	border-radius: .2em;
 }
 
 button {
-	color: var(--font);
-	background: var(--bg);
-	border: var(--font);
-	font-family: 'Helvetica-Light', 'Helvetica', 'Arial', sans-serif;
-	border-style: solid;
-	padding: var(--vw);
-	border-width: calc(var(--vw) * .1);
-	text-align: center;
-	font-size: var(--vw);
-	width: auto;
+	border: none;
+	color: var(--bg);
+	background: var(--accent);
+	overflow: hidden;
+	margin: 1rem;
+	padding: 0;
 	text-transform: uppercase;
+	width: 150px;
+	height: 40px;
+	border-radius: 10em;
 }
 
-input[type='number'] {
-	color: var(--font);
-	background: var(--bg);
-	border: var(--font);
-	font-family: 'Helvetica-Light', 'Helvetica', 'Arial', sans-serif;
-	border-style: solid;
-	padding: var(--vw);
-	border-width: calc(var(--vw) * .1);
-	text-align: center;
-	font-size: var(--vw);
-	width: auto;
-	text-transform: uppercase;
+button:hover{
+	animation: Fade 0.2s linear forwards;
 }
 
 /* Scrollbar */
@@ -87,4 +85,11 @@ input[type='number'] {
     :root{
         --vw: 4vw;
     }
+}
+
+@keyframes Fade {
+	100% {
+		background: var(--accent2);
+		box-shadow: 0.1rem 0.1rem #0002;
+	}
 }
