@@ -2,19 +2,33 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>about</title>
+    <title>About</title>
     <script src="javascript/CaesarCypher.js"></script>
     <link href="css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <h1>About Caesar Cypher</h1>
-    <h2>Instructions:</h2>
+    <div style="display: flex; align-items: center; width:100%; margin-top:2vw;">
+        <h1 style="left: 0; margin-right:auto;">Ayuda</h1>
+        <a href="index.html" style="right: 0; margin-left:auto;">Regresar</a>
+    </div>
+    <h2>Instrucciones:</h2>
     <br>
-    <h2>Encoding:</h2>
-    <h3>To encode a message, simply put it in the text area, choose a key between 0 and 26 and click encode!</h3>
-    <h2>Decoding with a key:</h2>
-    <h3>Simply put it in the text area, put the key in the correct box and click decode!</h3>
-    <h2>Decoding without a key:</h2>
-    <h3>Put it in the text area and click the Get Key button. If the message has more than 10 characters, it will put what the program thinks is the correct key in the Key box. Simply click decode afterwards!</h3>
+    <h2>Codificación:</h2>
+    <p>Para codificar el mensaje, simplemente pon el texto que deseas codificar en el recuadro indicado. La llave que quieres usar en el otro recuadro y da click en "Codificar".</p>
+    <h2>Decodificar si tienes la llave:</h2>
+    <p>Simplemente pon el mensaje codificado y la llave en los recuadros indicados y da click en "Decodificar".</p>
+    <h2>Decodificar sin la llave:</h2>
+    <p>Pon el mensaje en el recuadro de mensaje y da click en el botón "Obtener Llave". Una vez que aparezca la llave en el recuadro, da click en "Decodificar".</p>
+    <br>
+    <h2>¿Cómo funciona?</h2>
+    <p>El cifrado de Cesar asigna un número a cada letra de la "a" a la "z". Después, se le suma el valor de la llave a cada valor y se regresa de números a letras.</p>
+    <p>Este programa toma la tabla de frecuencia de cada letra analizada del libro "El Quijote" y la compara con la del mensaje. Se prueban todas las posibles llaves y con un ajuste de Chi cuadrada se saca la llave cuya frecuencia sea más similar.</p>
+    <br>
+    <h2>Créditos</h2>
+    <p>Zoe Caballero</p>
+    <p>Ruben Villalpando</p>
+    <p>Diego Palmerin</p>
+    <p>Manuel Hoyos</p>
+    <p>Javier Duran</p>
 </body>
 </html>

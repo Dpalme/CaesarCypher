@@ -28,7 +28,7 @@ body {
 	margin: auto;
 	background: var(--bg);
 	color: var(--font);
-	font-family: 'Wals-Bold', 'Arial', sans-serif;
+	font-family: 'Wals-Bold', sans-serif;
 }
 
 h1{
@@ -48,6 +48,10 @@ a {
 	text-decoration: none;
 	color: var(--accent);
 	font-family: 'basier_mono', sans-serif;
+}
+
+p{
+	font-size: var(--vw);
 }
 
 textarea {
