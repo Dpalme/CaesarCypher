@@ -5,15 +5,19 @@
 	src:url('fonts/GT-Walsheim-Bold.woff2') format('woff2');
 }
 
-@font-face{
-	font-family: 'Wals-Regular';
-	src:url('fonts/GT-Walsheim-Regular.woff2') format('woff2');
+@font-face {
+    font-family: 'basier_square_monoregular';
+    src: url('basiersquaremono-regular-webfont.woff2') format('woff2'),
+         url('basiersquaremono-regular-webfont.woff') format('woff'),
+         url('basiersquaremono-regular-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
 }
 
 /* Global Variables */
 
 :root {
-	--bg: #F7F9F8;
+	--bg: #eaeaea;
 	--font: #202025;
 	--accent: #679FDA;
 	--accent2: #20DD88;
@@ -26,7 +30,7 @@ body {
 	margin: auto;
 	background: var(--bg);
 	color: var(--font);
-	font-family: 'Wals-Regular', 'Arial', sans-serif;
+	font-family: 'Wals-Bold', 'Arial', sans-serif;
 }
 
 h1{
@@ -38,12 +42,20 @@ h3{
 	margin-right: var(--vw);
 }
 
+a {
+	text-decoration: none;
+	color: var(--accent);
+	font-family: 'basier_square_monoregular', sans-serif;
+}
+
 textarea {
-	background: #eee;
+	background: #F7F9F8;
 	color: var(--font-color);
 	font-weight: 100;
+	border: transparent;
+	padding: 1rem;
 	font-size: calc(var(--vw) * 1.5);
-	font-family: 'Wals-Regular', 'Arial', sans-serif;
+	font-family: 'basier_square_monoregular', sans-serif;
 	border-radius: .2em;
 }
 
