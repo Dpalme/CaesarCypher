@@ -46,40 +46,42 @@ function min(data) {
   }
 
 
-// Esta funcion regresa el número de caracter de la tabla ASCII
+// Esta funcion regresa el número de caracter en Unicode.
 function num(char){
     return char.charCodeAt(0)-97;
 }
 
 
-// Regresa el caracter que se encuentra en la posición "number" del abecedario.
+// Regresa el caracter que se encuentra en la posición "number" del abecedario traducido a Unicode.
 function character(number){
     return String.fromCharCode(97 + (26 + number) % 26);
 }
 
 
-// Codifica el mensaje usando la llave usada en la funcion y lo regresa
+// Codifica el mensaje usando la llave recibida y regresa el mensaje
 function encode(key, message){
     cypheredMessage = "";
     for(char of message){
         // Junta todos los caracteres en un único string.
         // Es una condición que checa si el caracter está entre la "a" y la "z". 
         // Si es cierto regresa el caracter modificado con la llave.
-        // Si la condición no se cumple solo añade el caracter (Esto para que los espacios se queden en su lugar.
+        // Si la condición no se cumple solo añade el caracter (Esto para que los espacios se queden en su lugar y no cambiar puntos ni comas.
         //                  condicion        condicion verdadera          condicion falsa
         cypheredMessage +=  isLetter(char) ? character(num(char) + key) : char;
     }
+    // Modifica la caja de texto de la página web
     document.getElementById('txtarea').value = cypheredMessage;
 }
 
 
-// Al decodifica el mensaje con la llave que se le de
+// Decodifica el mensaje con la llave que se le de
 function decode(key, message){
     decypheredMessage = "";
     for(char of message){
         // Al igual que la codificacion, junta una cadena con las letras codificadas y los espacios en su lugar.
         decypheredMessage +=  isLetter(char) ? character(num(char) - key) : char;
     }
+    // Modifica la caja de texto de la página web
     document.getElementById('txtarea').value = decypheredMessage;
 }
 
@@ -105,7 +107,7 @@ function bruteForce(message){
 
 // Funcion que descifra el mensaje con el uso de chi cuadrada
 function keyWithChi(message){
-    // Primero se crea un diccionario con todas las letras y su frecuencia.
+    // Primero se crea un diccionario con todas las letras.
     var frequency = {};
     for(var x = 0; x < 26; x++){
         frequency[character(x)] = 0
@@ -135,7 +137,6 @@ function keyWithChi(message){
         potentialKeys.push(chisqrd);
     }    
     // cambia la seed en la página al índice del valor mínimo de chi cuadrada.
-    // esto es porque el índice es la llave usada por lo que la mínima es la más probable.
     document.getElementById('seed').value = potentialKeys.indexOf(min(potentialKeys));
 }
 
@@ -144,5 +145,5 @@ function keyWithChi(message){
 function keyFinder(message){
     // Este if es en caso de que el mensaje sea muy corto se utiliza el método de fuerza bruta.
     // De otra manera se puede hacer con el método de chi cuadrada.
-    return message.length > 10 ? keyWithChi(message) : bruteForce(message);
+    return message.length > 6 ? keyWithChi(message) : bruteForce(message);
 }
