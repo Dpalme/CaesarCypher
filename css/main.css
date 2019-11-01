@@ -146,7 +146,7 @@ button:hover{
     }
 
     a {
-	font-size: calc(var(--vw) * 3);
+	font-size: calc(var(--vw) * 2.5);
 	line-height: 12vw;
 }
 }
