@@ -160,5 +160,5 @@ function keyWithChi(message){
 function keyFinder(message){
     // Este if es en caso de que el mensaje sea muy corto se utiliza el método de fuerza bruta.
     // De otra manera se puede hacer con el método de chi cuadrada.
-    return message.length > 6 ? keyWithChi(message) : bruteForce(message);
+    return message.length > 10 ? keyWithChi(message) : bruteForce(message);
 }
