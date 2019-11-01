@@ -148,7 +148,8 @@ function keyWithChi(message){
     }
     var maximum = max(potentialKeys);
     for(i = 0; i < 26; i++){
-        document.getElementById(character(i)).setAttribute('style', "height : "+ 5*potentialKeys[i]/maximum + ")vw; width: 3%; margin: auto; background: var(--accent)");
+        document.getElementById(character(i)).setAttribute('style', "height : "+ 5*potentialKeys[i]/maximum + "vw; width: 3%; margin-left: auto; margin-right: auto; background: var(--accent); bottom: 0;");
+        document.getElementById(character(i)).setAttribute('style', "height : "+ 5*potentialKeys[i]/maximum + "vw; width: 3%; margin-left: auto; margin-right: auto; background: var(--accent); bottom: 0;");
     }
     // cambia la seed en la página al índice del valor mínimo de chi cuadrada.
     document.getElementById('seed').value = potentialKeys.indexOf(min(potentialKeys));

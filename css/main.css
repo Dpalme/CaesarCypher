@@ -93,6 +93,10 @@ button:hover{
 	animation: Fade 0.2s linear forwards;
 }
 
+h5{
+	margin: auto;
+}
+
 .header {
 	display: flex;
 	align-items: center;
