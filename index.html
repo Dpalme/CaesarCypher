@@ -7,7 +7,7 @@
     <link href="css/main.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <div style="display: flex; align-items: center; width:100%; margin-top:2vw;">
+    <div class="header">
         <h1 style="left: 0; margin-right:auto;">CaesarCypher</h1>
         <a href="about.html" style="right: 0; margin-left:auto;">?</a>
     </div>
@@ -16,7 +16,7 @@
 b ho fxhuyr qxqfd hpsuhqglr ho yxhor, dxq vljxh srvdgr vreuh ho exvwr gh sdodv, vreuh ho glqwho gh pl sxhuwd</textarea>
     <div style="display: flex; align-items: center;">
         <h2 style="margin-right: 1vw;">Llave:</h2>
-        <textarea id="seed" rows="1" cols="2" style="width:2vw; height:2vw;text-overflow: wrap; white-space: wrap; overflow: hidden; resize: none; text-align: center; padding:0.1rem;"></textarea>
+        <textarea class="key" id="seed" rows="1" cols="2"></textarea>
     </div>
     
     <button onclick="encode(parseInt(document.getElementById('seed').value), document.getElementById('txtarea').value)">Codificar<br/></button>

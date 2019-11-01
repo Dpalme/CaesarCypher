@@ -24,7 +24,7 @@
 
 body {
 	background-color: var(--background);
-    width: 80%;
+    width: 90%;
 	margin: auto;
 	background: var(--bg);
 	color: var(--font);
@@ -46,14 +46,15 @@ h3{
 
 a {
 	background: var(--accent);
-	width: 2vw;
-	height: 2vw;
+	width: calc(var(--vw) * 2);
+	height: calc(var(--vw) * 2);
+	font-size: calc(var(--vw) * 1.5);
 	border-radius: 50%;
 	text-decoration: none;
 	color: var(--bg);
 	font-family: 'basier_mono', sans-serif;
 	text-align: center;
-	line-height: 2vw;
+	line-height: 6vw;
 }
 
 a:hover{
@@ -72,7 +73,7 @@ textarea {
 	padding: 1rem;
 	font-size: calc(var(--vw) * 1.5);
 	font-family: 'basier_mono', sans-serif;
-	border-radius: .2em;
+	border-radius: 5%;
 }
 
 button {
@@ -90,6 +91,23 @@ button {
 
 button:hover{
 	animation: Fade 0.2s linear forwards;
+}
+
+.header {
+	display: flex;
+	align-items: center;
+	width:100%;
+	margin-top:2vw;
+}
+
+.key {
+	width:calc(var(--vw) * 1.7);
+	height:calc(var(--vw) * 1);
+	text-overflow: wrap;
+	white-space: wrap;
+	overflow: hidden;
+	resize: none;
+	text-align: center;
 }
 
 /* Scrollbar */
@@ -123,7 +141,7 @@ button:hover{
 
 @media screen and (max-width: 1200px) {
     :root{
-        --vw: 4vw;
+        --vw: 3vw;
     }
 }
 
