@@ -111,6 +111,111 @@ button:hover{
 	text-align: center;
 }
 
+.a {
+	background: var(--accent);
+}
+
+.b {
+	background: var(--accent);
+}
+
+.c {
+	background: var(--accent);
+}
+
+.d {
+	background: var(--accent);
+}
+
+.e {
+	background: var(--accent);
+}
+
+.f {
+	background: var(--accent);
+}
+
+.g {
+	background: var(--accent);
+}
+
+.h {
+	background: var(--accent);
+}
+
+.i {
+	background: var(--accent);
+}
+
+.j {
+	background: var(--accent);
+}
+
+.k {
+	background: var(--accent);
+}
+
+.l {
+	background: var(--accent);
+}
+
+.m {
+	background: var(--accent);
+}
+
+.n {
+	background: var(--accent);
+}
+
+.o {
+	background: var(--accent);
+}
+
+.p {
+	background: var(--accent);
+}
+
+.q {
+	background: var(--accent);
+}
+
+.r {
+	background: var(--accent);
+}
+
+.s {
+	background: var(--accent);
+}
+
+.t {
+	background: var(--accent);
+}
+
+.u {
+	background: var(--accent);
+}
+
+.v {
+	background: var(--accent);
+}
+
+.w {
+	background: var(--accent);
+}
+
+.x {
+	background: var(--accent);
+}
+
+.y {
+	background: var(--accent);
+}
+
+.z {
+	background: var(--accent);
+}
+
+
 /* Scrollbar */
 ::-webkit-scrollbar {
 	width: 10px;

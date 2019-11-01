@@ -42,8 +42,18 @@ function min(data) {
     for(numero in data){
         min = data[numero] < min ? data[numero] : min;
     }
-    return min
-  }
+    return min;
+}
+
+
+// Esta función regresa el máximo de un conjunto de datos, en este caso se usa para encontrar el valor de la chi cuadrada.
+function max(data) {
+    var max = 0;
+    for(numero in data){
+        max = data[numero] > max ? data[numero] : max;
+    }
+    return max;
+}
 
 
 // Esta funcion regresa el número de caracter en Unicode.
@@ -135,7 +145,11 @@ function keyWithChi(message){
         }
         // añade los valores de chi cuadrada donde la posición de la chi cuadrada es la llave utilizada
         potentialKeys.push(chisqrd);
-    }    
+    }
+    var maximum = max(potentialKeys);
+    for(i = 0; i < 26; i++){
+        document.getElementById(character(i)).setAttribute('style', "height : "+ 5*potentialKeys[i]/maximum + ")vw; width: 3%; margin: auto; background: var(--accent)");
+    }
     // cambia la seed en la página al índice del valor mínimo de chi cuadrada.
     document.getElementById('seed').value = potentialKeys.indexOf(min(potentialKeys));
 }
