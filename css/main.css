@@ -46,15 +46,15 @@ h3{
 
 a {
 	background: var(--accent);
-	width: calc(var(--vw) * 4);
-	height: calc(var(--vw) * 4);
-	font-size: calc(var(--vw) * 3);
+	width: calc(var(--vw) * 3);
+	height: calc(var(--vw) * 3);
+	font-size: calc(var(--vw) * 2);
 	border-radius: 50%;
 	text-decoration: none;
 	color: var(--bg);
 	font-family: 'basier_mono', sans-serif;
 	text-align: center;
-	line-height: 4vw;
+	line-height: 3vw;
 }
 
 a:hover{
@@ -255,8 +255,8 @@ h5{
     }
 
     a {
-	font-size: calc(var(--vw) * 2.5);
-	line-height: 12vw;
+	font-size: calc(var(--vw) * 2);
+	line-height: 10vw;
 }
 }
 
