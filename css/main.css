@@ -70,10 +70,9 @@ textarea {
 	color: var(--font-color);
 	font-weight: 100;
 	border: transparent;
-	padding: 1rem;
+	padding: .5vw;
 	font-size: calc(var(--vw) * 1.5);
 	font-family: 'basier_mono', sans-serif;
-	border-radius: 5%;
 }
 
 button {
@@ -94,7 +93,11 @@ button:hover{
 }
 
 h5{
-	margin: auto;
+	width: 3%;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0;
+	text-align:center;
 }
 
 .header {
@@ -114,111 +117,6 @@ h5{
 	resize: none;
 	text-align: center;
 }
-
-.a {
-	background: var(--accent);
-}
-
-.b {
-	background: var(--accent);
-}
-
-.c {
-	background: var(--accent);
-}
-
-.d {
-	background: var(--accent);
-}
-
-.e {
-	background: var(--accent);
-}
-
-.f {
-	background: var(--accent);
-}
-
-.g {
-	background: var(--accent);
-}
-
-.h {
-	background: var(--accent);
-}
-
-.i {
-	background: var(--accent);
-}
-
-.j {
-	background: var(--accent);
-}
-
-.k {
-	background: var(--accent);
-}
-
-.l {
-	background: var(--accent);
-}
-
-.m {
-	background: var(--accent);
-}
-
-.n {
-	background: var(--accent);
-}
-
-.o {
-	background: var(--accent);
-}
-
-.p {
-	background: var(--accent);
-}
-
-.q {
-	background: var(--accent);
-}
-
-.r {
-	background: var(--accent);
-}
-
-.s {
-	background: var(--accent);
-}
-
-.t {
-	background: var(--accent);
-}
-
-.u {
-	background: var(--accent);
-}
-
-.v {
-	background: var(--accent);
-}
-
-.w {
-	background: var(--accent);
-}
-
-.x {
-	background: var(--accent);
-}
-
-.y {
-	background: var(--accent);
-}
-
-.z {
-	background: var(--accent);
-}
-
 
 /* Scrollbar */
 ::-webkit-scrollbar {
@@ -266,3 +164,4 @@ h5{
 		box-shadow: 0.1rem 0.1rem #0002;
 	}
 }
+
