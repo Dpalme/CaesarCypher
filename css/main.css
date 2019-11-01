@@ -101,8 +101,9 @@ button:hover{
 }
 
 .key {
-	width:calc(var(--vw) * 1.7);
-	height:calc(var(--vw) * 1);
+	width:calc(var(--vw) * 2.2);
+	height:calc(var(--vw) * 2);
+	padding: 0;
 	text-overflow: wrap;
 	white-space: wrap;
 	overflow: hidden;
