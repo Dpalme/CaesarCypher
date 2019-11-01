@@ -105,10 +105,10 @@ function bruteForce(message){
         msg = "";
         // For que crea los mensajes con cada llave y los añade a una sola cadena
         for(char of message){
-            msg += isLetter(char) ? character(num(char) + 1) : char;
+            msg += isLetter(char) ? character(num(char) - 1) : char;
         }
         message = msg;
-        messages += msg + ", key = " + (26-i) + ' | ';
+        messages += msg + ", key = " + (i) + ' | ';
     }
     // Cambia el area de texto a la cadena con los mensajes con las diferentes llaves
     document.getElementById('txtarea').value = messages;
