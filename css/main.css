@@ -46,15 +46,15 @@ h3{
 
 a {
 	background: var(--accent);
-	width: calc(var(--vw) * 2);
-	height: calc(var(--vw) * 2);
-	font-size: calc(var(--vw) * 1.5);
+	width: calc(var(--vw) * 4);
+	height: calc(var(--vw) * 4);
+	font-size: calc(var(--vw) * 3);
 	border-radius: 50%;
 	text-decoration: none;
 	color: var(--bg);
 	font-family: 'basier_mono', sans-serif;
 	text-align: center;
-	line-height: 6vw;
+	line-height: 4vw;
 }
 
 a:hover{
@@ -143,6 +143,11 @@ button:hover{
     :root{
         --vw: 3vw;
     }
+
+    a {
+	font-size: calc(var(--vw) * 1.5);
+	line-height: 6vw;
+}
 }
 
 @keyframes Fade {
